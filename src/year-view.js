@@ -21,7 +21,7 @@ export default class YearsView extends React.Component {
     this.getYears()
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.getYears()
   }
 
@@ -63,14 +63,8 @@ export default class YearsView extends React.Component {
 
   checkIfYearDisabled(year) {
     return (
-      year
-        .clone()
-        .endOf('year')
-        .isBefore(this.props.minDate, 'day') ||
-      year
-        .clone()
-        .startOf('year')
-        .isAfter(this.props.maxDate, 'day')
+      year.clone().endOf('year').isBefore(this.props.minDate, 'day') ||
+      year.clone().startOf('year').isAfter(this.props.maxDate, 'day')
     )
   }
 

@@ -53,7 +53,8 @@ class Calendar extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase,react/sort-comp
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let newState = {
       date: nextProps.date ? moment(nextProps.date, this.state.parsingFormat) : this.state.date,
       inputValue: nextProps.date
